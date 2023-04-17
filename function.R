@@ -1,12 +1,11 @@
-install.packages("testthat")
 library(tidyverse)
 library(testthat)
 
 convert_temp <- function(temperature, method) {
   if (method == "c2f") {
-    return (temperature * 9 / 5) + 32
+    return ((temperature * 9 / 5) + 32)
   } else {
-    return (temperature - 32) * 5 / 9
+    return ((temperature - 32) * 5 / 9)
   }
 }
 
