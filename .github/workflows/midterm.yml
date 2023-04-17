@@ -1,0 +1,22 @@
+name: main
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  midterm:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Run basic terminal commands
+      run: pwd && ls -la
+      
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag moirarenata/practice_midterm:latest
